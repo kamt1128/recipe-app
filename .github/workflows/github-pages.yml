@@ -21,8 +21,14 @@ jobs:
       - name: Install dependencies
         run: npm install
 
+      - name: Install core-js for polyfill
+        run: npm install core-js
+
       - name: Build the app
-        run: npm run build
+        run: |
+          echo "import 'core-js/actual/structured-clone';" > src/polyfill.js
+          echo "import './polyfill';" >> src/main.tsx
+          npm run build
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
