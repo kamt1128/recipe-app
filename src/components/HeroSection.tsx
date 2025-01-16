@@ -9,7 +9,7 @@ const HeroSection: React.FC = () => {
       </div>
       <div className="hero-image">
         <img
-          src="/recipe-app/src/assets/images/hero-image.png"
+          src="assets/hero-image.png"
           alt="Recetas para todos" 
         />
       </div>
