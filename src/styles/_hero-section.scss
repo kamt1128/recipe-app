@@ -1,0 +1,30 @@
+@use 'variables';
+@use 'mixins';
+
+.hero-section {
+    @include mixins.flex-center();
+    flex-direction: column;
+    padding: 20px;
+    background-color: variables.$light-bg;
+  
+    .hero-text {
+      h1 {
+        font-size: 3rem;
+        font-weight: bold;
+        color: variables.$text-color;
+  
+        span {
+          color: variables.$primary-color;
+        }
+      }
+    }
+  
+    .hero-image {
+      img {
+        width: 100%;
+        max-width: 500px;
+        border-radius: 10px;
+        box-shadow: variables.$shadow;
+      }
+    }
+}

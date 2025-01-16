@@ -1,0 +1,28 @@
+@use 'variables';
+@use 'mixins';
+
+.navbar {
+    @include mixins.flex-center();
+    justify-content: space-between;
+    background-color: #fff;
+    padding: 10px 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  
+    .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: variables.$primary-color;
+    }
+  
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 15px;
+  
+      li a {
+        text-decoration: none;
+        color: variables.$text-color;
+        font-size: 1rem;
+      }
+    }
+}

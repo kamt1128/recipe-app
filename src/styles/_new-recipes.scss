@@ -1,0 +1,115 @@
+@use 'variables';
+
+.new-recipes {
+  padding: 20px;
+  text-align: center;
+
+  h2 {
+    font-size: 2rem;
+    color: variables.$primary-color;
+    margin-bottom: 20px;
+  }
+
+  .recipe-list {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+  }
+
+  .recipe-card {
+    width: 200px;
+    height: 220px; // Default height
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: variables.$shadow;
+    transition: height 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    background-color: #fff;
+
+    &:hover {
+      height: 300px; // Expanded height
+      box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.2);
+
+      .card-whithout-hover {
+        opacity: 0; // Hide front content
+      }
+
+      .card-hover {
+        opacity: 1;
+        transform: translateY(0); // Show hover content
+      }
+    }
+
+    .card-content {
+      position: relative;
+      width: 100%;
+      height: 100%;
+    }
+
+    .card-whithout-hover {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background-color: #fff;
+      transition: opacity 0.3s ease;
+      z-index: 1;
+
+      .recipe-image {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        margin-bottom: 10px;
+      }
+
+      h3 {
+        font-size: 1.2rem;
+        color: variables.$text-color;
+        margin: 10px 0;
+      }
+
+      .recipe-rating {
+        span {
+          color: #ffa500;
+          font-size: 1rem;
+        }
+      }
+    }
+
+    .card-hover {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background-color: #f9f9f9;
+      border-radius: 10px;
+      opacity: 0; // Initially hidden
+      transform: translateY(-10px); // Slide effect
+      transition: opacity 0.3s ease, transform 0.3s ease;
+      z-index: 2;
+
+      .recipe-details {
+        list-style: none;
+        padding: 0;
+        text-align: left;
+        color: variables.$text-color;
+
+        li {
+          margin: 10px 0;
+          font-size: 0.9rem;
+
+          span {
+            font-weight: bold;
+            color: variables.$primary-color;
+          }
+        }
+      }
+    }
+  }
+}
