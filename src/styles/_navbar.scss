@@ -1,17 +1,24 @@
 @use 'variables';
 @use 'mixins';
+@use 'fonts';
 
 .navbar {
     @include mixins.flex-center();
     justify-content: space-between;
     background-color: #fff;
     padding: 10px 20px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    /* box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); */
   
     .logo {
       font-size: 1.5rem;
       font-weight: bold;
       color: variables.$primary-color;
+      &__recipe-text {
+        font-family: MonsterClubHouse, sans-serif;
+      }
+      &__app-text {
+        font-family: PoppinsRegular, sans-serif;
+      }
     }
   
     .nav-links {

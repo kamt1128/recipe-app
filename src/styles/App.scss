@@ -8,3 +8,10 @@ body {
   margin: 0;
   padding: 0;
 }
+
+.main-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  background: #FFFFFF 0% 0% no-repeat padding-box;
+  box-shadow: 0px 3px 6px #8395A7;
+}

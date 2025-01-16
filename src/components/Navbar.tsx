@@ -4,7 +4,10 @@ import '../styles/_navbar.scss';
 const Navbar: React.FC = () => {
   return (
     <nav className="navbar">
-      <div className="logo">RecipeApp</div>
+      <div className="logo">
+        <span className="logo__recipe-text">Recipe</span>
+        <span className="logo__app-text">App</span>
+      </div>
       <ul className="nav-links">
         <li><a href="#">Home</a></li>
         <li><a href="#">Vegetarianos</a></li>

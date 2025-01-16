@@ -9,10 +9,12 @@ import { RecipesProvider } from './state/RecipesContext';
 const App: React.FC = () => {
   return (
     <RecipesProvider>
-      <Navbar />
-      <HeroSection />
-      <NewRecipes />
-      <Footer />
+      <div className="main-container">
+        <Navbar />
+        <HeroSection />
+        <NewRecipes />
+        <Footer />
+      </div>
     </RecipesProvider>
   );
 };
