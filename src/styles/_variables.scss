@@ -1,7 +1,9 @@
+@use "sass:color";
+
 $primary-color: #D84A4A;
 $second-color: #425966;
 $light-bg: #f9f9f9;
 $white-color: #ffffff;
 $shadow-color: #8395A7;
-$box-shadow: 0 0 4px lighten($shadow-color, 20%);
+$box-shadow: 0 0 4px color.adjust($shadow-color, $lightness: 20%);
 $shadow: 0 5px 15px rgba(0, 0, 0, 0.2);

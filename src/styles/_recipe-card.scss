@@ -1,6 +1,7 @@
 @use 'variables';
 @use 'mixins';
 @use 'fonts';
+@use "sass:color";
 
 .recipe-card {
     text-align: center;
@@ -10,7 +11,7 @@
     box-shadow: variables.$shadow;
     transition: height 0.3s ease;
     position: relative;
-    background-image: linear-gradient(to bottom, lighten(variables.$second-color, 60%), variables.$white-color);
+    background-image: linear-gradient(to bottom, color.adjust(variables.$second-color, $lightness: 60%), variables.$white-color);
 
     &:hover {
       height: 332px;
@@ -31,7 +32,7 @@
       border-radius: 50%;
       overflow: hidden;
       margin: -50px auto -4px;
-      box-shadow: 0px 4px 8px lighten(variables.$second-color, 30%);
+      box-shadow: 0px 4px 8px color.adjust(variables.$second-color, $lightness: 30%);
       &__img {
         width: auto;
         height: 100%;
