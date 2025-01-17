@@ -35,8 +35,8 @@ const RecipeCard: React.FC<RecipeCardProps> = ({
         <div className="content-whithout-hover">
           <div className="recipe-details">
             <h3 className="recipe-name">
-              <span className="recipe-name__text1">{title.split(' ')[0]}</span>
-              <span className="recipe-name__text2">{title.split(' ')[1]}</span>
+              <span className="recipe-name__text1">{title.split(' ')[0].slice(0, 7)}</span>
+              <span className="recipe-name__text2">{title.split(' ')[1].slice(0, 7)}</span>
             </h3>
             <div className="footer-card-content">
               <span className='recipe-rating'>
