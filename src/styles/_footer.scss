@@ -1,28 +1,33 @@
 @use 'variables';
+@use 'mixins';
+@use 'fonts';
 
 .footer {
-  background-color: #d9e6f2;
-  text-align: center;
-  padding: 20px;
+  background: transparent linear-gradient(180deg, #C2E3F3 0%, #6AA3C1 100%) 0% 0% no-repeat padding-box;
+  height: 167px;
+  display: flex;
+  align-items: center;
+  &__text {
+    @include mixins.flex-center();
+    width: 50%;
+    font-family: MonsterClubHouse, sans-serif;
+    font-size: 56px;
+    list-style: 67px;
+    color: variables.$second-color;
+    font-weight: normal;
+  }
 
-  .sponsor-section {
-    h3 {
-      font-size: 1.5rem;
-      color: variables.$text-color;
-      margin-bottom: 10px;
-    }
-
-    .sponsor-logos {
-      display: flex;
-      justify-content: center;
-      gap: 15px;
-
-      img {
-        width: 100px;
-        height: auto;
-        border-radius: 10px;
-        box-shadow: variables.$shadow;
-      }
+  .content-image {
+    @include mixins.flex-center();
+    justify-content: flex-end;
+    width: 50%;
+    padding-right: 55px;
+    text-align: right;
+    overflow: hidden;
+    max-height: 250px;
+    margin-top: -32px;
+    &__img {
+      max-width: 573px;
     }
   }
 }

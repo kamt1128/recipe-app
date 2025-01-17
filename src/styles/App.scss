@@ -2,6 +2,7 @@
 @use 'hero-section';
 @use 'new-recipes';
 @use 'footer';
+@use 'variables';
 
 body {
   font-family: Arial, sans-serif;
@@ -11,7 +12,7 @@ body {
 
 .main-container {
   max-width: 1280px;
-  margin: 0 auto;
+  margin: 16px auto 0;
+  box-shadow: variables.$box-shadow;
   background: #FFFFFF 0% 0% no-repeat padding-box;
-  box-shadow: 0px 3px 6px #8395A7;
 }

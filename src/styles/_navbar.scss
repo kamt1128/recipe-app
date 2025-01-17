@@ -3,33 +3,52 @@
 @use 'fonts';
 
 .navbar {
-    @include mixins.flex-center();
-    justify-content: space-between;
-    background-color: #fff;
-    padding: 10px 20px;
-    /* box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); */
-  
-    .logo {
-      font-size: 1.5rem;
-      font-weight: bold;
+  @include mixins.flex-center();
+  justify-content: space-between;
+  background-color: #fff;
+  padding: 10px 70px;
+  position: relative;
+  z-index: 1;
+  box-shadow: variables.$shadow-color 0px 10px 10px -5px;
+
+  .logo {
+    &__recipe-text {
+      font-family: MonsterClubHouse, sans-serif;
+      font-size: 40px;
+      letter-spacing: 1.15px;
+      color: variables.$second-color;
+      line-height: 48px;
+    }
+    &__app-text {
+      font-family: PoppinsRegular, sans-serif;
+      letter-spacing: 0.86px;
       color: variables.$primary-color;
-      &__recipe-text {
-        font-family: MonsterClubHouse, sans-serif;
+      font-size: 30px;
+      line-height: 46px;
+    }
+  }
+
+  .nav-links {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 48px;
+  }
+
+  .nav-item {
+    font-family: PoppinsMedium, sans-serif;
+    font-size: 13px;
+    line-height: 20px;
+    &__link {
+      text-decoration: none;
+      color: variables.$second-color;
+      cursor: pointer;
+      &:hover {
+        color: variables.$primary-color;
       }
-      &__app-text {
-        font-family: PoppinsRegular, sans-serif;
+      &.active {
+        color: variables.$primary-color;
       }
     }
-  
-    .nav-links {
-      list-style: none;
-      display: flex;
-      gap: 15px;
-  
-      li a {
-        text-decoration: none;
-        color: variables.$text-color;
-        font-size: 1rem;
-      }
-    }
+  }
 }

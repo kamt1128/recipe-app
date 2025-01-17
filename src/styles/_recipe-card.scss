@@ -1,0 +1,137 @@
+@use 'variables';
+@use 'mixins';
+@use 'fonts';
+
+.recipe-card {
+    text-align: center;
+    width: 266px;
+    height: 270px;
+    border-radius: 10px;
+    box-shadow: variables.$shadow;
+    transition: height 0.3s ease;
+    position: relative;
+    background-image: linear-gradient(to bottom, lighten(variables.$second-color, 60%), variables.$white-color);
+
+    &:hover {
+      height: 332px;
+
+      .content-whithout-hover {
+        opacity: 0;
+      }
+
+      .content-hover {
+        opacity: 1;
+      }
+    }
+
+    .recipe-image {
+      @include mixins.flex-center();
+      width: 164px;
+      height: 158px;
+      border-radius: 50%;
+      overflow: hidden;
+      margin: -50px auto -4px;
+      box-shadow: 0px 4px 8px lighten(variables.$second-color, 30%);
+      &__img {
+        width: auto;
+        height: 100%;
+      }
+    }
+
+    .card-content {
+      position: relative;
+    }
+
+    .content-whithout-hover {
+      width: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      transition: opacity 0.3s ease;
+      .recipe-details {
+        height: 150px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        .recipe-name {
+          @include mixins.flex-center();
+          gap: 5px;
+          font-size: 30px;
+          line-height: 36px;
+          letter-spacing: -0.6px;
+          color: variables.$primary-color;
+          font-weight: normal;
+          &__text1 {
+            font-family: PoppinsRegular, sans-serif;
+          }
+          &__text2 {
+            font-family: MonsterClubHouse, sans-serif;
+            position: relative;
+            top: 4px;
+          }
+        }
+
+      }
+      .footer-card-content {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 16px;
+        .recipe-rating {
+          font-family: PoppinsRegular, sans-serif;
+          font-size: 26px;
+          line-height: 20px;
+          color: variables.$second-color;
+          @include mixins.flex-center();
+          gap: 16px;
+          &__icon {
+            width: 24px;
+            height: 24px;
+          }
+        }
+        .like-button {
+          width: 24px;
+          height: 24px;
+        }
+      }
+    }
+
+    .content-hover {
+      width: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      margin-top: 20px;
+      .recipe-details {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+        .details-info {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          &__label {
+            font-family: MonsterClubHouse, sans-serif;
+            font-size: 17px;
+            color: variables.$primary-color;
+            line-height: 1;
+            margin-top: 4px;
+          }
+          &__value {
+            font-family: PoppinsRegular, sans-serif;
+            font-size: 15px;
+            color: variables.$second-color;
+            line-height: 1;
+          }
+        }
+      }
+    }
+
+  }

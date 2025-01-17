@@ -1,21 +1,24 @@
 import React from 'react';
-import Navbar from './components/Navbar';
-import HeroSection from './components/HeroSection';
-import NewRecipes from './components/NewRecipes';
-import Footer from './components/Footer';
-import './styles/App.scss';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { RecipesProvider } from './state/RecipesContext';
+import Navbar from './components/shared/Navbar';
+import Footer from './components/shared/Footer';
+import Home from './components/pages/home/Home';
+import './styles/App.scss';
 
 const App: React.FC = () => {
   return (
-    <RecipesProvider>
-      <div className="main-container">
-        <Navbar />
-        <HeroSection />
-        <NewRecipes />
-        <Footer />
-      </div>
-    </RecipesProvider>
+    <Router basename="/recipe-app">
+      <RecipesProvider>
+        <div className="main-container">
+          <Navbar />
+          <Routes>
+            <Route path="/" element={<Home />} />
+          </Routes>
+          <Footer />
+        </div>
+      </RecipesProvider>
+    </Router>
   );
 };
 

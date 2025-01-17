@@ -17,7 +17,11 @@ const fetchRecipes = async () => {
 };
 
 export const RecipesProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
-  const { data, error, isLoading } = useQuery({ queryKey: ['recipes'], queryFn: fetchRecipes });
+  const { data, error, isLoading } = useQuery({ 
+    queryKey: ['recipes'],
+    queryFn: fetchRecipes,
+    staleTime: Infinity,
+  });
 
   return (
     <RecipesContext.Provider value={{ data, error, isLoading }}>

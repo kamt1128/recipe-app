@@ -3,28 +3,33 @@
 
 .hero-section {
     @include mixins.flex-center();
-    flex-direction: column;
-    padding: 20px;
     background-color: variables.$light-bg;
+    position: relative;
   
     .hero-text {
-      h1 {
-        font-size: 3rem;
-        font-weight: bold;
-        color: variables.$text-color;
-  
-        span {
-          color: variables.$primary-color;
-        }
+      position: absolute;
+      font-family: PoppinsRegular, sans-serif;
+      font-size: 74px;
+      color: variables.$white-color;
+      font-weight: normal;
+      line-height: 1;
+      margin: 35px 0 0;
+      left: 261px;
+      &__inner-text {
+        font-family: MonsterClubHouse, sans-serif;
+        font-size: 67px;
+        display: block;
+        position: relative;
+        top: -16px;
+        left: 2px;
       }
     }
   
-    .hero-image {
-      img {
+    .hero-image-content {
+      width: 100%;
+      line-height: 0;
+      &__img {
         width: 100%;
-        max-width: 500px;
-        border-radius: 10px;
-        box-shadow: variables.$shadow;
       }
     }
 }
