@@ -2,12 +2,11 @@ import React from 'react';
 import '@styles/_new-recipes.scss';
 import { useRecipes } from '../../../../state/RecipesContext';
 import RecipeCard from '../../../shared/RecipeCard';
+import RecipeCardSkeleton from '../../../shared/RecipeCardSkeleton';
 
 
 const NewRecipes: React.FC = () => {
-  const { data: recipes, error, isLoading } = useRecipes();
-
-  if (isLoading) return <div>Loading...</div>;
+  const { data: recipes, error, isLoading, rowsNumber } = useRecipes();
 
   if (error) {
     console.error('Error fetching recipes:', error);
@@ -18,7 +17,10 @@ const NewRecipes: React.FC = () => {
     <section className="new-recipes">
       <h2 className="new-recipes__title">Nuevas Recetas</h2>
       <div className="recipe-list">
-        {recipes.map((recipe: any, index: number) => (
+      {isLoading ? 
+        Array.from(Array(rowsNumber).keys()).map((_, index: number) => (
+          <RecipeCardSkeleton key={index} />
+        )) : recipes?.map((recipe: any, index: number) => (
           <RecipeCard
             key={index}
             image={recipe.image}
@@ -28,7 +30,8 @@ const NewRecipes: React.FC = () => {
             readyInMinutes={recipe.readyInMinutes}
             difficulty={recipe.difficulty}
           />
-        ))}
+        ))
+      }
       </div>
     </section>
   );

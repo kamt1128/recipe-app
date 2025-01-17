@@ -1,0 +1,66 @@
+@use 'variables';
+@use "sass:color";
+
+.recipe-card-skeleton {
+  text-align: center;
+  width: 266px;
+  height: 270px;
+  border-radius: 10px;
+  position: relative;
+  background-image: linear-gradient(to bottom, color.adjust(#333, $lightness: 75%), variables.$white-color);
+  box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.05);
+
+  .recipe-image-skeleton {
+    width: 164px;
+    height: 158px;
+    border-radius: 50%;
+    margin: -50px auto -4px;
+    box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.05);
+  }
+
+  .recipe-details-skeleton {
+    height: 120px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 24px;
+
+    .recipe-name-skeleton {
+      width: 200px;
+      height: 32px;
+      border-radius: 24px;
+    }
+
+    .footer-card-content-skeleton {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 16px;
+      width: calc(100% - 32px);
+      .recipe-rating-skeleton {
+        width: 70px;
+        height: 32px;
+        border-radius: 24px;
+      }
+      .like-button-skeleton {
+        width: 32px;
+        height: 32px;
+        border-radius: 24px;
+      }
+    }
+  }  
+}
+
+.skeleton {
+  background: #eee;
+  background: linear-gradient(110deg, #ececec 8%, #f5f5f5 18%, #ececec 33%);
+  background-size: 200% 100%;
+  animation: 1.5s shine linear infinite;
+}
+
+@keyframes shine {
+  to {
+    background-position-x: -200%;
+  }
+}
