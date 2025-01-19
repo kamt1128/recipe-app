@@ -6,9 +6,7 @@ const Footer: React.FC = () => {
   return (
     <footer className="footer">
       <h3 className='footer__text'>Con el Patrocinio de</h3>
-      <div className="content-image">
-        <img src={productsImage} alt="Products" className="content-image__img" />
-      </div>
+      <img src={productsImage} alt="Products" className="footer__img" />
     </footer>
   );
 };

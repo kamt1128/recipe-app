@@ -6,4 +6,5 @@ $light-bg: #f9f9f9;
 $white-color: #ffffff;
 $shadow-color: #8395A7;
 $box-shadow: 0 0 4px color.adjust($shadow-color, $lightness: 20%);
-$shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+$card-shadow: 4px 4px 12px color.adjust($shadow-color, $lightness: 20%);
+$background-card: linear-gradient(to bottom, color.adjust($second-color, $lightness: 60%), $white-color);

@@ -9,7 +9,7 @@
   align-items: center;
   &__text {
     @include mixins.flex-center();
-    width: 50%;
+    flex-grow: 1;
     font-family: MonsterClubHouse, sans-serif;
     font-size: 56px;
     list-style: 67px;
@@ -17,17 +17,29 @@
     font-weight: normal;
   }
 
-  .content-image {
-    @include mixins.flex-center();
-    justify-content: flex-end;
-    width: 50%;
-    padding-right: 55px;
-    text-align: right;
-    overflow: hidden;
-    max-height: 245px;
-    margin-top: -32px;
+  &__img {
+    max-width: 573px;
+    margin-top: -50px;
+    position: relative;
+    right: -16px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .footer {
+    height: 116px;
+    &__text {
+      font-size: 39px;
+      list-style: 47px;
+      justify-content: flex-end;
+      padding-right: 8px;
+    }
+  
     &__img {
-      max-width: 573px;
+      max-width: 379px;
+      margin-top: -26px;
+      right: 0;
+      padding-right: 50px;
     }
   }
 }

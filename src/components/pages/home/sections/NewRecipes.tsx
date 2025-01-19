@@ -16,22 +16,24 @@ const NewRecipes: React.FC = () => {
   return (
     <section className="new-recipes">
       <h2 className="new-recipes__title">Nuevas Recetas</h2>
-      <div className="recipe-list">
-      {isLoading ? 
-        Array.from(Array(rowsNumber).keys()).map((_, index: number) => (
-          <RecipeCardSkeleton key={index} />
-        )) : recipes?.map((recipe: any, index: number) => (
-          <RecipeCard
-            key={index}
-            image={recipe.image}
-            title={recipe.title}
-            spoonacularScore={recipe.spoonacularScore}
-            servings={recipe.servings}
-            readyInMinutes={recipe.readyInMinutes}
-            difficulty={recipe.difficulty}
-          />
-        ))
-      }
+      <div className="list-container">
+        <div className="recipe-list">
+          {isLoading ? 
+            Array.from(Array(rowsNumber).keys()).map((_, index: number) => (
+              <RecipeCardSkeleton key={index} />
+            )) : recipes?.map((recipe: any, index: number) => (
+              <RecipeCard
+                key={index}
+                image={recipe.image}
+                title={recipe.title}
+                spoonacularScore={recipe.spoonacularScore}
+                servings={recipe.servings}
+                readyInMinutes={recipe.readyInMinutes}
+                difficulty={recipe.difficulty}
+              />
+            ))
+          }
+        </div>
       </div>
     </section>
   );

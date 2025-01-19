@@ -8,10 +8,10 @@
     width: 266px;
     height: 270px;
     border-radius: 10px;
-    box-shadow: variables.$shadow;
+    box-shadow: variables.$card-shadow;
     transition: height 0.3s ease;
     position: relative;
-    background-image: linear-gradient(to bottom, color.adjust(variables.$second-color, $lightness: 60%), variables.$white-color);
+    background-image: variables.$background-card;
 
     &:hover {
       height: 332px;
@@ -104,7 +104,7 @@
       top: 0;
       left: 0;
       opacity: 0;
-      transition: opacity 0.3s ease;
+      transition: opacity 0.4s ease;
       margin-top: 20px;
       .recipe-details {
         list-style: none;

@@ -1,0 +1,40 @@
+@use 'variables';
+@use 'mixins';
+@use 'fonts';
+
+.mobile-navbar {
+  padding: 16px;
+  position: relative;
+  z-index: 1;
+  margin-top: -48px;
+
+  .mobile-links {
+    width: 100%;
+    list-style: none;
+    @include mixins.flex-center();
+    flex-wrap: wrap;
+    gap: 14px;
+    padding: 0;
+    margin: 0;
+  }
+
+  .mobile-link-item {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-direction: column;
+    gap: 8px;
+    padding: 8px 4px;
+    width: calc(106px - 8px);
+    height: calc(85px - 16px);
+    background: transparent linear-gradient(180deg, #E9F1FA 0%, #FFFFFF 100%) 0% 0% no-repeat padding-box;
+    box-shadow: 0px 5px 9px #8395A766;
+    border-radius: 10px;
+    cursor: pointer;
+    &__text {
+      font-family: PoppinsMedium, sans-serif;
+      font-size: 13px;
+      line-height: 20px;
+    }
+  }
+}
