@@ -134,5 +134,43 @@
         }
       }
     }
+  }
 
+  @media screen and (max-width: 428px) {
+    .recipe-card {
+      width: 180px;
+      height: 180px;
+      &:hover {
+        height: 272px;
+      }
+      .recipe-image {
+        width: 110px;
+        height: 110px;
+      }
+      .content-whithout-hover {
+        .recipe-details {
+          height: 116px;
+          .recipe-name {
+            font-size: 20px;
+            line-height: 24px;
+          }
+        }
+        .footer-card-content {
+          padding: 0 12px;
+          .recipe-rating {
+            font-size: 17px;
+            line-height: 26px;
+            gap: 8px;
+            &__icon {
+              width: 16px;
+              height: 16px;
+            }
+          }
+          .like-button {
+            width: 16px;
+            height: 16px;
+          }
+        }
+      }
+    }
   }

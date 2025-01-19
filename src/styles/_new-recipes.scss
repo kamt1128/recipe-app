@@ -36,6 +36,7 @@
     &__title {
       font-size: 54px;
       line-height: 65px;
+      padding-left: 0;
     }
   }
 
@@ -43,5 +44,20 @@
     padding: 50px 16px 0;
     width: fit-content;
     justify-content: flex-start;
+  }
+}
+
+@media screen and (max-width: 428px) {
+  .new-recipes {
+    margin: 20px 16px 16px;
+    &__title {
+      text-align: center;
+    }
+  }
+
+  .recipe-list {
+    min-height: 310px;
+    padding: 50px 2px 0;
+    gap: 20px;
   }
 }

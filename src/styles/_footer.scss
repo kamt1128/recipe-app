@@ -21,7 +21,7 @@
     max-width: 573px;
     margin-top: -50px;
     position: relative;
-    right: -16px;
+    padding-right: 50px;
   }
 }
 
@@ -40,6 +40,23 @@
       margin-top: -26px;
       right: 0;
       padding-right: 50px;
+    }
+  }
+}
+
+@media screen and (max-width: 428px) {
+  .footer {
+    height: 70px;
+    &__text {
+      font-size: 23px;
+      list-style: 28px;
+      padding-right: 8px;
+    }
+  
+    &__img {
+      max-width: 230px;
+      margin-top: -20px;
+      padding-right: 4px;
     }
   }
 }
