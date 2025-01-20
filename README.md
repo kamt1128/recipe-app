@@ -1,50 +1,21 @@
-# React + TypeScript + Vite
+# Recipe APP
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Plataforma web para acceder para consultar recetas, tendencias del mercado y productos recomendados.
+- [Demo Recipe APP](https://kamt1128.github.io/recipe-app/)
 
-Currently, two official plugins are available:
+## Especificaciones técnicas
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Se utilizo [Vite](https://github.com/vitejs) para la creación de la plantilla de la aplicación con [React](https://es.react.dev/) en su versión 18.3.1 y [Typescript](https://www.typescriptlang.org/).
+- [Axios](https://axios-http.com/es/docs/intro) como cliente HTTP para el consumo de la API [https://spoonacular.com/food-api](https://spoonacular.com/food-api/), mediante la implementación de `react-query`
+- [SASS](https://sass-lang.com/) como pre-procesador css para el diseño del look and feel.
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
+## Paso para ejecutar la aplicación
 ```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
-
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
-
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
+// Clone project
+git clone https://github.com/kamt1128/recipe-app.git
+// Install dependencies
+cd recipe-app
+npm install
+// execute code
+npm run dev
 ```
