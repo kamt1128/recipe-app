@@ -1,18 +1,28 @@
-@use 'navbar';
-@use 'hero-section';
-@use 'new-recipes';
-@use 'footer';
-@use 'variables';
+@use 'variables' as *;
 
 body {
-  font-family: Arial, sans-serif;
+  font-family: $font-family-text-regular;
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 .main-container {
-  max-width: 1280px;
+  max-width: $max-container-width;
   margin: 16px auto 0;
-  box-shadow: variables.$box-shadow;
-  background: variables.$white-color 0% 0% no-repeat padding-box;
+  box-shadow: $box-shadow;
+  background: $white-color 0% 0% no-repeat padding-box;
+}
+
+.skeleton {
+  background: #eee;
+  background: linear-gradient(110deg, #ececec 8%, #f5f5f5 18%, #ececec 33%);
+  background-size: 200% 100%;
+  animation: 1.5s shine linear infinite;
+}
+
+@keyframes shine {
+  to {
+    background-position-x: -200%;
+  }
 }

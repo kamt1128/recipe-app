@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { memo } from 'react';
 import '@styles/_recipe-card-skeleton.scss';
 
 
@@ -17,4 +17,4 @@ const RecipeCardSkeleton: React.FC = () => {
   );
 };
 
-export default RecipeCardSkeleton;
+export default memo(RecipeCardSkeleton);

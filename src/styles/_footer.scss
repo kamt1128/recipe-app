@@ -1,18 +1,17 @@
-@use 'variables';
-@use 'mixins';
-@use 'fonts';
+@use 'variables' as *;
+@use 'mixins' as *;
 
 .footer {
-  background: variables.$backgroubd-footer;
+  background: $backgroubd-footer;
   height: 167px;
   display: flex;
   align-items: center;
   &__text {
-    @include mixins.flex-center();
+    @include flex-center();
     flex-grow: 1;
-    font-family: variables.$font-family-title;
+    font-family: $font-family-title;
     font-size: 56px;
-    color: variables.$second-color;
+    color: $second-color;
     font-weight: normal;
   }
 
@@ -24,7 +23,7 @@
   }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: $table-breakpoint) {
   .footer {
     height: 116px;
     &__text {
@@ -42,7 +41,7 @@
   }
 }
 
-@media screen and (max-width: 428px) {
+@media screen and (max-width: $mobile-breakpoint) {
   .footer {
     height: 70px;
     &__text {

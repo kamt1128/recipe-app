@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { memo } from 'react';
 import '@styles/_mobile-navbar.scss';
 import vegetariansIcon from '@assets/images/icon-vegetarians.svg';
 import mainRecipesIcon from '@assets/images/icon-main-recipes.svg';
@@ -13,27 +13,27 @@ const MobileNavbar: React.FC = () => {
       <nav className="mobile-navbar">
           <ul className="mobile-links">
             <li className="mobile-link-item">
-              <img src={vegetariansIcon} className="mobile-link-item__icon" /> 
+              <img src={vegetariansIcon} className="mobile-link-item__icon" loading="lazy" /> 
               <div className="mobile-link-item__text">Vegetarianos</div>
             </li>
             <li className="mobile-link-item">
-              <img src={mainRecipesIcon} className="mobile-link-item__icon" /> 
+              <img src={mainRecipesIcon} className="mobile-link-item__icon" loading="lazy" /> 
               <div className="mobile-link-item__text">Principales</div>
             </li>
             <li className="mobile-link-item">
-              <img src={cakesIcon} className="mobile-link-item__icon" /> 
+              <img src={cakesIcon} className="mobile-link-item__icon" loading="lazy" /> 
               <div className="mobile-link-item__text">Tortas</div>
             </li>
             <li className="mobile-link-item">
-              <img src={fastFoodsIcon} className="mobile-link-item__icon" /> 
+              <img src={fastFoodsIcon} className="mobile-link-item__icon" loading="lazy" /> 
               <div className="mobile-link-item__text">Rápida</div>
             </li>
             <li className="mobile-link-item">
-              <img src={menuKidsIcon} className="mobile-link-item__icon" /> 
+              <img src={menuKidsIcon} className="mobile-link-item__icon" loading="lazy" /> 
               <div className="mobile-link-item__text">Menú Niños</div>
             </li>
             <li className="mobile-link-item">
-              <img src={soupsIcon} className="mobile-link-item__icon" /> 
+              <img src={soupsIcon} className="mobile-link-item__icon" loading="lazy" /> 
               <div className="mobile-link-item__text">Sopas</div>
             </li>
           </ul>
@@ -41,4 +41,4 @@ const MobileNavbar: React.FC = () => {
     );
   };
   
-  export default MobileNavbar;
+  export default memo(MobileNavbar);

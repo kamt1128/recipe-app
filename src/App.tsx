@@ -1,13 +1,15 @@
-import React, { useContext } from 'react';
+import React, { lazy, memo, Suspense, useContext } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { WindowWidthContext } from './state/WindowWidthContext';
-import { RecipesProvider } from './state/RecipesContext';
-import Navbar from './components/shared/Navbar';
-import HeroSection from './components/shared/HeroSection';
-import MobileNavbar from './components/shared/MobileNavbar';
-import Footer from './components/shared/Footer';
-import Home from './components/pages/home/Home';
+import { TABLE_BREAKPOINT } from './components/shared/constants';
 import './styles/App.scss';
+
+const Loading = lazy(() => import('./components/shared/Loading'));
+const Navbar = lazy(() => import('./components/shared/Navbar'));
+const HeroSection = lazy(() => import('./components/shared/HeroSection'));
+const MobileNavbar = lazy(() => import('./components/shared/MobileNavbar'));
+const Home = lazy(() => import('./components/pages/Home'));
+const Footer = lazy(() => import('./components/shared/Footer'));
 
 const App: React.FC = () => {
   const context = useContext(WindowWidthContext);
@@ -20,20 +22,19 @@ const App: React.FC = () => {
 
   return (
     <Router basename="/recipe-app">
-      
-        <RecipesProvider>
-          <div className="main-container">
-            <Navbar />
-            <HeroSection />
-            {windowWidth <= 768 && <MobileNavbar />}
-            <Routes>
-              <Route path="/" element={<Home />} />
-            </Routes>
-            <Footer />
-          </div>
-        </RecipesProvider>
+      <div className="main-container">
+        <Suspense fallback={<Loading />}>
+          <Navbar />
+          <HeroSection />
+          {windowWidth <= TABLE_BREAKPOINT && <MobileNavbar />}
+          <Routes>
+            <Route path="/" element={<Home />} />
+          </Routes>
+          <Footer />
+        </Suspense>
+      </div>
     </Router>
   );
 };
 
-export default App;
+export default memo(App);

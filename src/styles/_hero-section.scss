@@ -1,23 +1,22 @@
-@use 'variables';
-@use 'mixins';
+@use 'variables' as *;
+@use 'mixins' as *;
 
 .hero-section {
-  @include mixins.flex-center();
-  background-color: variables.$light-bg;
+  @include flex-center();
   position: relative;
 }
 
 .hero-text {
   position: absolute;
-  font-family: variables.$font-family-text-regular;
+  font-family: $font-family-text-regular;
   font-size: 74px;
-  color: variables.$white-color;
+  color: $white-color;
   font-weight: normal;
   line-height: 1;
   margin: 35px 0 0;
   left: 261px;
   &__inner-text {
-    font-family: variables.$font-family-title;
+    font-family: $font-family-title;
     font-size: 67px;
     display: block;
     position: relative;
@@ -34,18 +33,18 @@
   }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: $table-breakpoint) {
   .hero-text {
     margin-top: 24px;
     left: 121px;
   }
 }
 
-@media screen and (max-width: 428px) {
+@media screen and (max-width: $mobile-breakpoint) {
   .hero-image-content {
     overflow: hidden;
     height: 234px;
-    @include mixins.flex-center();
+    @include flex-center();
     &__img {
       width: auto;
       height: 100%;

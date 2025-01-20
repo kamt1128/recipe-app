@@ -1,8 +1,9 @@
-import React, { useContext } from 'react';
+import React, { memo, useContext } from 'react';
 import { NavLink } from 'react-router-dom';
-import '@styles/_navbar.scss';
 import homeIcon from '@assets/images/icon-home.png';
 import { WindowWidthContext } from '../../state/WindowWidthContext';
+import { TABLE_BREAKPOINT } from './constants';
+import '@styles/_navbar.scss';
 
 const Navbar: React.FC = () => {
   const context = useContext(WindowWidthContext);
@@ -19,7 +20,7 @@ const Navbar: React.FC = () => {
         <span className="logo__recipe-text">Recipe</span>
         <span className="logo__app-text">App</span>
       </div>
-      {windowWidth > 768 ? (
+      {windowWidth > TABLE_BREAKPOINT ? (
         <ul className="nav-links">
           <li className="nav-item">
             <NavLink className="nav-item__link" to="/">Home</NavLink>
@@ -45,11 +46,11 @@ const Navbar: React.FC = () => {
         </ul>
       ) : (
         <NavLink className="nav-item__link" to="/">
-          <img src={homeIcon} alt="Home icon" />
+          <img src={homeIcon} alt="Home icon" loading="lazy" />
         </NavLink>
       )}
     </nav>
   );
 };
 
-export default Navbar;
+export default memo(Navbar);

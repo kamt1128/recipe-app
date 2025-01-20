@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { memo } from 'react';
 import '@styles/_recipe-card.scss';
 import iconStar from '@assets/images/icon-star.svg';
 import iconHeart from '@assets/images/icon-heart.svg';
@@ -28,7 +28,7 @@ const RecipeCard: React.FC<RecipeCardProps> = ({
     <div className="recipe-card">
       {/* Recipe image */}
       <div className="recipe-image">
-        <img src={image} alt={title} className="recipe-image__img" />
+        <img src={image} alt={title} className="recipe-image__img" loading="lazy" />
       </div>
       <div className="card-content">
         {/* Info without hover */}
@@ -40,9 +40,9 @@ const RecipeCard: React.FC<RecipeCardProps> = ({
             </h3>
             <div className="footer-card-content">
               <span className='recipe-rating'>
-                <img src={iconStar} alt='Icon star' className='recipe-rating__icon'/> {(spoonacularScore * 5 / 100).toFixed(1)}
+                <img src={iconStar} alt='Icon star' className='recipe-rating__icon' loading="lazy" /> {(spoonacularScore * 5 / 100).toFixed(1)}
               </span>
-              <img src={iconHeart} alt='Icon heart' className='like-button'/>
+              <img src={iconHeart} alt='Icon heart' className='like-button' loading="lazy"/>
             </div>
           </div>
         </div>
@@ -50,17 +50,17 @@ const RecipeCard: React.FC<RecipeCardProps> = ({
         <div className="content-hover">
           <ul className="recipe-details">
             <li className='details-info'>
-              <img src={iconPortion} alt="Chef's hat" className="details-info__icon" />
+              <img src={iconPortion} alt="Chef's hat" className="details-info__icon" loading="lazy" />
               <span className="details-info__label">Tamaño de la porción</span>
               <span className="details-info__value">{servings} raciones</span>
             </li>
             <li className='details-info'>
-              <img src={iconClock} alt="Chef's hat" className="details-info__icon" />
+              <img src={iconClock} alt="Chef's hat" className="details-info__icon" loading="lazy" />
               <span className="details-info__label">Tiempo de preparación</span>
               <span className="details-info__value">{readyInMinutes} minutos</span>
             </li>
             <li className='details-info'>
-              <img src={iconChefHat} alt="Chef's hat" className="details-info__icon" />
+              <img src={iconChefHat} alt="Chef's hat" className="details-info__icon" loading="lazy" />
               <span className="details-info__label">Dificultad</span>
               <span className="details-info__value">{difficulty}</span>
             </li>
@@ -71,4 +71,4 @@ const RecipeCard: React.FC<RecipeCardProps> = ({
   );
 };
 
-export default RecipeCard;
+export default memo(RecipeCard);

@@ -1,6 +1,5 @@
-@use 'variables';
-@use 'mixins';
-@use 'fonts';
+@use 'variables' as *;
+@use 'mixins' as *;
 
 .mobile-navbar {
   padding: 16px;
@@ -11,7 +10,7 @@
   .mobile-links {
     width: 100%;
     list-style: none;
-    @include mixins.flex-center();
+    @include flex-center();
     flex-wrap: wrap;
     gap: 14px;
     padding: 0;
@@ -27,12 +26,12 @@
     padding: 8px 4px;
     width: calc(106px - 8px);
     height: calc(85px - 16px);
-    background: variables.$background-card;
-    box-shadow: variables.$card-shadow2;
+    background: $background-card;
+    box-shadow: $card-shadow2;
     border-radius: 10px;
     cursor: pointer;
     &__text {
-      font-family: variables.$font-family-text-medium;
+      font-family: $font-family-text-medium;
       font-size: 13px;
       line-height: 20px;
     }

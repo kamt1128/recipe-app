@@ -1,5 +1,4 @@
-@use 'variables';
-@use 'fonts';
+@use 'variables' as *;
 @use "sass:color";
 
 .new-recipes {
@@ -7,9 +6,9 @@
   &__title {
     font-size: 67px;
     line-height: 80px;
-    color: variables.$primary-color;
+    color: $primary-color;
     margin: 0 0 20px;
-    font-family: variables.$font-family-title;
+    font-family: $font-family-title;
     font-weight: normal;
     padding-left: 20px;
     &--error {
@@ -44,14 +43,14 @@
     width: 90%;
     height: fit-content;
     border-radius: 8px;
-    font-family: variables.$font-family-text-medium;
-    color: color.adjust(variables.$primary-color, $lightness: 20%);
-    border: 1px solid color.adjust(variables.$primary-color, $lightness: 35%);
-    background-color: color.adjust(variables.$primary-color, $lightness: 40%);
+    font-family: $font-family-text-medium;
+    color: color.adjust($primary-color, $lightness: 20%);
+    border: 1px solid color.adjust($primary-color, $lightness: 35%);
+    background-color: color.adjust($primary-color, $lightness: 40%);
   }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: $table-breakpoint) {
   .new-recipes {
     margin: 20px 50px 16px;
     &__title {
@@ -68,7 +67,7 @@
   }
 }
 
-@media screen and (max-width: 428px) {
+@media screen and (max-width: $mobile-breakpoint) {
   .new-recipes {
     margin: 20px 16px 16px;
     &__title {

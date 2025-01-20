@@ -1,12 +1,17 @@
-import React from 'react';
+import React, { memo, useMemo } from 'react';
 import '@styles/_new-recipes.scss';
-import { useRecipes } from '../../../../state/RecipesContext';
-import RecipeCard from '../../../shared/RecipeCard';
-import RecipeCardSkeleton from '../../../shared/RecipeCardSkeleton';
+import { useRecipes } from '../../../state/RecipesContext';
+import RecipeCard from '../../shared/RecipeCard';
+import RecipeCardSkeleton from '../../shared/RecipeCardSkeleton';
 
 
 const NewRecipes: React.FC = () => {
-  const { data: recipes, error, isLoading, rowsNumber } = useRecipes();
+  const { data: recipes, error, isLoading, numberOfRecords } = useRecipes();
+
+  const skeletons = useMemo(() => 
+    Array.from(Array(numberOfRecords).keys()).map((_, index) => (
+      <RecipeCardSkeleton key={index} />
+    )), [numberOfRecords]);
 
   if (error) {
     console.error('Error fetching recipes:', error);
@@ -28,9 +33,8 @@ const NewRecipes: React.FC = () => {
       <div className="list-container">
         <div className="recipe-list">
           {isLoading ? 
-            Array.from(Array(rowsNumber).keys()).map((_, index: number) => (
-              <RecipeCardSkeleton key={index} />
-            )) : recipes?.map((recipe: any, index: number) => (
+            skeletons :
+            recipes?.map((recipe: any, index: number) => (
               <RecipeCard
                 key={index}
                 image={recipe.image}
@@ -48,4 +52,4 @@ const NewRecipes: React.FC = () => {
   );
 };
 
-export default NewRecipes;
+export default memo(NewRecipes);

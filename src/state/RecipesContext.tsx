@@ -3,12 +3,12 @@ import { useQuery } from '@tanstack/react-query';
 import axios from 'axios';
 
 const RecipesContext = createContext<any>(null);
-const rowsNumber = 4;
+const numberOfRecords = 4;
 
 const fetchRecipes = async () => {
   const response = await axios.get('https://api.spoonacular.com/recipes/random', {
     params: {
-      number: rowsNumber,
+      number: numberOfRecords,
     },
     headers: {
     'x-api-key': import.meta.env.VITE_SPOONACULAR_API_KEY,
@@ -25,7 +25,7 @@ export const RecipesProvider: React.FC<{ children: ReactNode }> = ({ children })
   });
 
   return (
-    <RecipesContext.Provider value={{ data, error, isLoading, rowsNumber }}>
+    <RecipesContext.Provider value={{ data, error, isLoading, numberOfRecords }}>
       {children}
     </RecipesContext.Provider>
   );
