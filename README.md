@@ -3,6 +3,8 @@
 Plataforma web para acceder para consultar recetas, tendencias del mercado y productos recomendados.
 - [Demo Recipe APP](https://kamt1128.github.io/recipe-app/)
 
+![Screen shot](https://github.com/kamt1128/recipe-app/blob/main/assets/images/screen-shot-app.png)
+
 ## Especificaciones técnicas
 
 - Se utilizo [Vite](https://github.com/vitejs) para la creación de la plantilla de la aplicación con [React](https://es.react.dev/) en su versión 18.3.1 y [Typescript](https://www.typescriptlang.org/).
