@@ -3,7 +3,7 @@
 @use 'fonts';
 
 .footer {
-  background: transparent linear-gradient(180deg, #C2E3F3 0%, #6AA3C1 100%) 0% 0% no-repeat padding-box;
+  background: variables.$backgroubd-footer;
   height: 167px;
   display: flex;
   align-items: center;
@@ -12,7 +12,6 @@
     flex-grow: 1;
     font-family: MonsterClubHouse, sans-serif;
     font-size: 56px;
-    list-style: 67px;
     color: variables.$second-color;
     font-weight: normal;
   }
@@ -30,7 +29,6 @@
     height: 116px;
     &__text {
       font-size: 39px;
-      list-style: 47px;
       justify-content: flex-end;
       padding-right: 8px;
     }
@@ -49,8 +47,10 @@
     height: 70px;
     &__text {
       font-size: 23px;
-      list-style: 28px;
-      padding-right: 8px;
+      padding-right: 0;
+      text-align: center;
+      justify-content: center;
+      padding-left: 8px;
     }
   
     &__img {

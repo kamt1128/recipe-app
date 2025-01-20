@@ -8,10 +8,10 @@
     width: 266px;
     height: 270px;
     border-radius: 10px;
-    box-shadow: variables.$card-shadow;
+    box-shadow: variables.$card-shadow1;
     transition: height 0.3s ease;
     position: relative;
-    background-image: variables.$background-card;
+    background: variables.$background-card;
 
     &:hover {
       height: 332px;

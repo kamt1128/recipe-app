@@ -6,7 +6,7 @@
   @include mixins.flex-center();
   justify-content: space-between;
   gap: 150px;
-  background-color: #fff;
+  background-color: variables.$white-color;
   padding: 10px 62px 10px 70px;
   position: relative;
   z-index: 1;

@@ -27,8 +27,8 @@
     padding: 8px 4px;
     width: calc(106px - 8px);
     height: calc(85px - 16px);
-    background: transparent linear-gradient(180deg, #E9F1FA 0%, #FFFFFF 100%) 0% 0% no-repeat padding-box;
-    box-shadow: 0px 5px 9px #8395A766;
+    background: variables.$background-card;
+    box-shadow: variables.$card-shadow2;
     border-radius: 10px;
     cursor: pointer;
     &__text {
