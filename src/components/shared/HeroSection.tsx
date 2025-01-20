@@ -1,8 +1,16 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import '@styles/_hero-section.scss';
 import imageBanner from '@assets/images/hero-image.png';
 
 const HeroSection: React.FC = () => {
+  const [cachedImage, setCachedImage] = useState<string | null>(null);
+
+  useEffect(() => {
+    const img = new Image();
+    img.src = imageBanner;
+    img.onload = () => setCachedImage(imageBanner);
+  }, []);
+
   return (
     <section className="hero-section">
       <h1 className="hero-text">
@@ -11,7 +19,7 @@ const HeroSection: React.FC = () => {
       <div className="hero-image-content">
         <img
           className="hero-image-content__img"
-          src={imageBanner}
+          src={cachedImage || ''}
           alt="Recetas para todos"
         />
       </div>
