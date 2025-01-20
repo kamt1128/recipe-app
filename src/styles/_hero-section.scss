@@ -9,7 +9,7 @@
 
 .hero-text {
   position: absolute;
-  font-family: PoppinsRegular, sans-serif;
+  font-family: variables.$font-family-text-regular;
   font-size: 74px;
   color: variables.$white-color;
   font-weight: normal;
@@ -17,7 +17,7 @@
   margin: 35px 0 0;
   left: 261px;
   &__inner-text {
-    font-family: MonsterClubHouse, sans-serif;
+    font-family: variables.$font-family-title;
     font-size: 67px;
     display: block;
     position: relative;

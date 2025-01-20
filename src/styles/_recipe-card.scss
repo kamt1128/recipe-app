@@ -64,10 +64,10 @@
           color: variables.$primary-color;
           font-weight: normal;
           &__text1 {
-            font-family: PoppinsRegular, sans-serif;
+            font-family: variables.$font-family-text-regular;
           }
           &__text2 {
-            font-family: MonsterClubHouse, sans-serif;
+            font-family: variables.$font-family-title;
             position: relative;
             top: 4px;
           }
@@ -80,7 +80,7 @@
         justify-content: space-between;
         padding: 0 16px;
         .recipe-rating {
-          font-family: PoppinsRegular, sans-serif;
+          font-family: variables.$font-family-text-regular;
           font-size: 26px;
           line-height: 20px;
           color: variables.$second-color;
@@ -119,14 +119,14 @@
           flex-direction: column;
           align-items: center;
           &__label {
-            font-family: MonsterClubHouse, sans-serif;
+            font-family: variables.$font-family-title;
             font-size: 17px;
             color: variables.$primary-color;
             line-height: 1;
             margin-top: 4px;
           }
           &__value {
-            font-family: PoppinsRegular, sans-serif;
+            font-family: variables.$font-family-text-regular;
             font-size: 15px;
             color: variables.$second-color;
             line-height: 1;

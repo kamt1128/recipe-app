@@ -1,5 +1,6 @@
 @use 'variables';
 @use 'fonts';
+@use "sass:color";
 
 .new-recipes {
   margin: 32px 50px;
@@ -8,9 +9,12 @@
     line-height: 80px;
     color: variables.$primary-color;
     margin: 0 0 20px;
-    font-family: MonsterClubHouse, sans-serif;
+    font-family: variables.$font-family-title;
     font-weight: normal;
     padding-left: 20px;
+    &--error {
+      margin-bottom: 0;
+    }
   }
 }
 
@@ -28,6 +32,23 @@
   min-height: 400px;
   width: 100%;
   padding: 50px 0 0;
+  &--error {
+    padding-top: 0;
+  }
+  &__error-message {
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 0.2px;
+    text-align: center;
+    padding: 32px;
+    width: 90%;
+    height: fit-content;
+    border-radius: 8px;
+    font-family: variables.$font-family-text-medium;
+    color: color.adjust(variables.$primary-color, $lightness: 20%);
+    border: 1px solid color.adjust(variables.$primary-color, $lightness: 35%);
+    background-color: color.adjust(variables.$primary-color, $lightness: 40%);
+  }
 }
 
 @media screen and (max-width: 768px) {

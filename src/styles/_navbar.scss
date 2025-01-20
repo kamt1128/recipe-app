@@ -15,14 +15,14 @@
 
   .logo {
     &__recipe-text {
-      font-family: MonsterClubHouse, sans-serif;
+      font-family: variables.$font-family-title;
       font-size: 40px;
       letter-spacing: 1.15px;
       color: variables.$second-color;
       line-height: 48px;
     }
     &__app-text {
-      font-family: PoppinsRegular, sans-serif;
+      font-family: variables.$font-family-text-regular;
       letter-spacing: 0.86px;
       color: variables.$primary-color;
       font-size: 30px;
@@ -40,7 +40,7 @@
   }
 
   .nav-item {
-    font-family: PoppinsMedium, sans-serif;
+    font-family: variables.$font-family-text-medium;
     font-size: 13px;
     line-height: 20px;
     &__link {

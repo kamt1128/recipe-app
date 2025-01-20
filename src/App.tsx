@@ -13,7 +13,7 @@ const App: React.FC = () => {
   const context = useContext(WindowWidthContext);
     
   if (!context) {
-    throw new Error('Navbar must be used within a WindowWidthProvider');
+    throw new Error('La App debe usarse dentro de un WindowWidthProvide');
   }
   
   const { windowWidth } = context;

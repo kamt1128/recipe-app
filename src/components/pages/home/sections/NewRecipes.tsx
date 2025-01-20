@@ -10,7 +10,16 @@ const NewRecipes: React.FC = () => {
 
   if (error) {
     console.error('Error fetching recipes:', error);
-    return <div>Error loading recipes. Please try again later.</div>;
+    return (
+      <section className="new-recipes">
+        <h2 className="new-recipes__title new-recipes__title--error">Nuevas Recetas</h2>
+        <div className="list-container">
+          <div className="recipe-list recipe-list--error">
+            <p className='recipe-list__error-message'>Error al cargar recetas. Inténtelo de nuevo más tarde.</p>
+          </div>
+        </div>
+      </section>
+    );
   }
 
   return (

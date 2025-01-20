@@ -10,7 +10,7 @@
   &__text {
     @include mixins.flex-center();
     flex-grow: 1;
-    font-family: MonsterClubHouse, sans-serif;
+    font-family: variables.$font-family-title;
     font-size: 56px;
     color: variables.$second-color;
     font-weight: normal;

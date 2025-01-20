@@ -32,7 +32,7 @@
     border-radius: 10px;
     cursor: pointer;
     &__text {
-      font-family: PoppinsMedium, sans-serif;
+      font-family: variables.$font-family-text-medium;
       font-size: 13px;
       line-height: 20px;
     }
