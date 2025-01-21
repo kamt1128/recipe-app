@@ -15,6 +15,7 @@ body {
   width: 100%;
   max-width: $max-container-width;
   margin: 16px auto 0;
+  padding: 0 0 20px;
   box-shadow: $box-shadow;
   background: $white-color 0% 0% no-repeat padding-box;
 }
@@ -29,5 +30,18 @@ body {
 @keyframes shine {
   to {
     background-position-x: -200%;
+  }
+}
+
+@media screen and (max-width: $table-breakpoint) {
+  .main-container {
+    margin: 0;
+    padding-bottom: 16px;
+  }
+}
+
+@media screen and (max-width: $mobile-breakpoint) {
+  .main-container {
+    padding-bottom: 8px;
   }
 }
