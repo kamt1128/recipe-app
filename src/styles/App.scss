@@ -1,5 +1,9 @@
 @use 'variables' as *;
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: $font-family-text-regular;
   margin: 0;
@@ -8,6 +12,7 @@ body {
 }
 
 .main-container {
+  width: 100%;
   max-width: $max-container-width;
   margin: 16px auto 0;
   box-shadow: $box-shadow;

@@ -1,4 +1,4 @@
-import React, { memo } from 'react';
+import React from 'react';
 import '@styles/_recipe-card.scss';
 import iconStar from '@assets/images/icon-star.svg';
 import iconHeart from '@assets/images/icon-heart.svg';
@@ -71,4 +71,4 @@ const RecipeCard: React.FC<RecipeCardProps> = ({
   );
 };
 
-export default memo(RecipeCard);
+export default RecipeCard;

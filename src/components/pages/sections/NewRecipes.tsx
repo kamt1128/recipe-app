@@ -1,4 +1,4 @@
-import React, { memo, useMemo } from 'react';
+import React, { useMemo } from 'react';
 import '@styles/_new-recipes.scss';
 import { useRecipes } from '../../../state/RecipesContext';
 import RecipeCard from '../../shared/RecipeCard';
@@ -52,4 +52,4 @@ const NewRecipes: React.FC = () => {
   );
 };
 
-export default memo(NewRecipes);
+export default NewRecipes;
