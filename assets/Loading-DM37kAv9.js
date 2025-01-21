@@ -1,1 +1,0 @@
-import{r as a,j as s}from"./index-BzFGJq6v.js";const o=()=>s.jsx("div",{className:"loading",role:"status","aria-live":"polite",children:s.jsx("div",{className:"loading__spinner"})}),i=a.memo(o);export{i as default};

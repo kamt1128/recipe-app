@@ -1,1 +1,0 @@
-import{r as s,j as o}from"./index-BzFGJq6v.js";const t="/recipe-app/assets/products-footer-CFtOPsLH.png",e=()=>o.jsxs("footer",{className:"footer",children:[o.jsx("h3",{className:"footer__text",children:"Con el Patrocinio de"}),o.jsx("img",{src:t,alt:"Products",className:"footer__img",loading:"lazy"})]}),a=s.memo(e);export{a as default};
