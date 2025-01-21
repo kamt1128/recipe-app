@@ -1,9 +1,11 @@
-# Recipe APP
+# Recipe App
 
 Plataforma web para acceder para consultar recetas, tendencias del mercado y productos recomendados.
-- [Demo Recipe APP](https://kamt1128.github.io/recipe-app/)
+- [Enlace demo Recipe App](https://kamt1128.github.io/recipe-app/)
 
-![Screen shot](src/assets/images/screen-shot-app.png)
+| Desktop | Table | Mobile |
+| :---: | :---: | :---: |
+| ![Screen shot](src/assets/images/screen-shot-desktop.png){: valign="top"} | ![Screen shot](src/assets/images/screen-shot-table.png){: valign="top"} | ![Screen shot](src/assets/images/screen-shot-mobile.png){: valign="top"} |
 
 ## Especificaciones técnicas
 
